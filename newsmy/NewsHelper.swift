@@ -15,6 +15,7 @@ class NewsHelper {
     
     // send asynchronous result through closure
     func getArticles(returnArticles: @escaping ([Article]) -> Void) {
+        var censorState = true
         
         Alamofire.request("https://newsapi.org/v2/top-headlines?country=us&apiKey=d5a7abc05da045acb54266d081d6a983").responseJSON { ( response) in
             print(response)
@@ -36,11 +37,26 @@ class NewsHelper {
                         article.url = url
                      // article.description = description
                         article.description = description
+                        
                         guard let classification = DocumentClassifier().classify(title) else { return }
                         article.category = classification.prediction.category.rawValue
+                        
+                        if censorState {
+                            if title.contains("rump") || description.contains("rump") {
+                                print("------- Crafty Trumpy ! ---------")
+                                article.category = "CENCORED !!!"
+                            } else {
+                                articles.append(article)
+                            }
+                        } else {
+                            articles.append(article)
+                        }
+                        
+                        
                         // print(title)
                         // print(classification.prediction)
-                        articles.append(article)     
+                        
+                        // articles.append(article)
                     }
                     returnArticles(articles)
                 }
