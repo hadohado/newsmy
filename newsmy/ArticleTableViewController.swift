@@ -35,18 +35,18 @@ class ArticleTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as? ArticleCell {
-
         // Configure the cell...
-        let article =  articles[indexPath.row]
+            let article =  articles[indexPath.row]
             cell.titleLabel.text = article.title
             cell.categoryLabel.text  = article.category
-        return cell
-        
+            // let url = URL(string: "https://example.com/image.png")
+            // imageView.kf.setImage(with: url)
+            let url = URL(string: article.urlToImage)
+            cell.articleImageView.kf.setImage(with: url)
+            return cell
         }
-        
         return UITableViewCell() // dummy
     }
-    
 }
 
 class ArticleCell : UITableViewCell {

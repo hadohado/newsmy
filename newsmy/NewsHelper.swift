@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 import DocumentClassifier
+import Kingfisher
 
 class NewsHelper {
     
