@@ -44,7 +44,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⛳️ Sports" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4U-My-Qok">
-                                            <rect key="frame" x="21" y="218" width="333" height="21"/>
+                                            <rect key="frame" x="21" y="213" width="333" height="21"/>
                                             <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="wrJ-hQ-v6f"/>
@@ -53,8 +53,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fk3-s6-mCk">
-                                            <rect key="frame" x="21" y="70" width="333" height="139.5"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lighton" translatesAutoresizingMaskIntoConstraints="NO" id="Fk3-s6-mCk">
+                                            <rect key="frame" x="21" y="70" width="333" height="134.5"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -65,7 +65,7 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="Fk3-s6-mCk" secondAttribute="trailing" constant="5" id="VUX-CX-MMA"/>
                                         <constraint firstItem="cns-n4-RZ9" firstAttribute="top" secondItem="K36-Od-Qvi" secondAttribute="topMargin" id="b5L-s5-dpo"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="cns-n4-RZ9" secondAttribute="trailing" constant="5" id="bCx-AW-zO6"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="V4U-My-Qok" secondAttribute="bottom" id="i2Q-bp-aES"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="V4U-My-Qok" secondAttribute="bottom" constant="5" id="i2Q-bp-aES"/>
                                         <constraint firstItem="Fk3-s6-mCk" firstAttribute="firstBaseline" secondItem="cns-n4-RZ9" secondAttribute="baseline" constant="14" symbolType="layoutAnchor" id="p73-I7-e1N"/>
                                         <constraint firstItem="cns-n4-RZ9" firstAttribute="leading" secondItem="K36-Od-Qvi" secondAttribute="leadingMargin" constant="5" id="z8g-iz-l5n"/>
                                     </constraints>
@@ -142,4 +142,7 @@
             <point key="canvasLocation" x="-637" y="180"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="lighton" width="32" height="32"/>
+    </resources>
 </document>
