@@ -10,7 +10,6 @@
 		56E3B35D0B966B952F69CA8E /* Pods_newsmy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59703BCA2207F95A77B0B24B /* Pods_newsmy.framework */; };
 		7B64B6F221BF953C000BAAF7 /* ArticleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64B6F121BF953C000BAAF7 /* ArticleTableViewController.swift */; };
 		7B64B6F421BF95A0000BAAF7 /* ArticleWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64B6F321BF95A0000BAAF7 /* ArticleWebViewController.swift */; };
-		7B64B6F621BFA2A1000BAAF7 /* ArticleWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64B6F521BFA2A1000BAAF7 /* ArticleWebViewController.swift */; };
 		7B9EADBE21BCA39B00911E8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9EADBD21BCA39B00911E8D /* AppDelegate.swift */; };
 		7B9EADC321BCA39B00911E8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B9EADC121BCA39B00911E8D /* Main.storyboard */; };
 		7B9EADC521BCA39E00911E8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B9EADC421BCA39E00911E8D /* Assets.xcassets */; };
@@ -22,6 +21,7 @@
 		3209CEC7479974F830F2C40D /* Pods-newsmy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newsmy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-newsmy/Pods-newsmy.debug.xcconfig"; sourceTree = "<group>"; };
 		4FDB65374C68C739918EF45B /* Pods-newsmy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newsmy.release.xcconfig"; path = "Pods/Target Support Files/Pods-newsmy/Pods-newsmy.release.xcconfig"; sourceTree = "<group>"; };
 		59703BCA2207F95A77B0B24B /* Pods_newsmy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_newsmy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B618C6921C0D53A009465B2 /* ArticleWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArticleWebViewController.swift; path = /Users/ai87/Documents/SOFTWARE/_ios_10day_advanced/newsmy/newsmy/ArticleWebViewController.swift; sourceTree = "<absolute>"; };
 		7B64B6F121BF953C000BAAF7 /* ArticleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewController.swift; sourceTree = "<group>"; };
 		7B64B6F321BF95A0000BAAF7 /* ArticleWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArticleWebViewController.swift; path = /Users/ai87/Documents/SOFTWARE/_ios_10day_advanced/newsmy/newsmy/ArticleWebViewController.swift; sourceTree = "<absolute>"; };
 		7B64B6F521BFA2A1000BAAF7 /* ArticleWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArticleWebViewController.swift; path = /Users/ai87/Documents/SOFTWARE/_ios_10day_advanced/newsmy/newsmy/ArticleWebViewController.swift; sourceTree = "<absolute>"; };
@@ -78,6 +78,7 @@
 				7B9EADBD21BCA39B00911E8D /* AppDelegate.swift */,
 				7BE7BC2321BF65580042A248 /* NewsHelper.swift */,
 				7B64B6F521BFA2A1000BAAF7 /* ArticleWebViewController.swift */,
+				7B618C6921C0D53A009465B2 /* ArticleWebViewController.swift */,
 				7B64B6F121BF953C000BAAF7 /* ArticleTableViewController.swift */,
 				7B64B6F321BF95A0000BAAF7 /* ArticleWebViewController.swift */,
 				7B9EADC121BCA39B00911E8D /* Main.storyboard */,
@@ -199,6 +200,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-newsmy/Pods-newsmy-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DocumentClassifier/DocumentClassifier.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -206,6 +208,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DocumentClassifier.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -222,7 +225,6 @@
 				7BE7BC2421BF65580042A248 /* NewsHelper.swift in Sources */,
 				7B64B6F221BF953C000BAAF7 /* ArticleTableViewController.swift in Sources */,
 				7B64B6F421BF95A0000BAAF7 /* ArticleWebViewController.swift in Sources */,
-				7B64B6F621BFA2A1000BAAF7 /* ArticleWebViewController.swift in Sources */,
 				7B9EADBE21BCA39B00911E8D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
