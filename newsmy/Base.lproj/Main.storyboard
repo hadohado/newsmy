@@ -26,7 +26,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="250" id="yEr-Eu-ajt">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticleCell" rowHeight="250" id="yEr-Eu-ajt" customClass="ArticleCell" customModule="newsmy" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="250"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yEr-Eu-ajt" id="K36-Od-Qvi">
@@ -70,6 +70,11 @@
                                         <constraint firstItem="cns-n4-RZ9" firstAttribute="leading" secondItem="K36-Od-Qvi" secondAttribute="leadingMargin" constant="5" id="z8g-iz-l5n"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="articleImageView" destination="Fk3-s6-mCk" id="ZmE-hJ-sFN"/>
+                                    <outlet property="categoryLabel" destination="V4U-My-Qok" id="2hp-7f-U6t"/>
+                                    <outlet property="titleLabel" destination="cns-n4-RZ9" id="agv-5z-hbE"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
