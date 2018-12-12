@@ -16,6 +16,7 @@ class NewsHelper {
     // send asynchronous result through closure
     func getArticles(returnArticles: @escaping ([Article]) -> Void) {
         var censorState = true
+        var myImage = UIImage(named: "lighton")
         
         Alamofire.request("https://newsapi.org/v2/top-headlines?country=us&apiKey=d5a7abc05da045acb54266d081d6a983").responseJSON { ( response) in
             print(response)
@@ -43,10 +44,10 @@ class NewsHelper {
                         
                         if censorState {
                             if title.contains("rump") || description.contains("rump") {
-                                print("------- Crafty Trumpy ! ---------")
+                                print("------- censored ---------")
                                 article.title = "CENSORED"
                                 article.description = "CENSORED"
-                                article.category = "CENSORED !!!"
+                                article.category = "CENSORED"
                                 articles.append(article)
                             } else {
                                 article.urlToImage = urlToImage

@@ -42,7 +42,13 @@ class ArticleTableViewController: UITableViewController {
             // let url = URL(string: "https://example.com/image.png")
             // imageView.kf.setImage(with: url)
             let url = URL(string: article.urlToImage)
-            cell.articleImageView.kf.setImage(with: url)
+            // cell.articleImageView.kf.setImage(with: url)
+            if article.category == "CENSORED" {
+                cell.articleImageView.image = UIImage(named: "lighton")
+            } else {
+                cell.articleImageView.kf.setImage(with: url)
+            }
+            
             return cell
         }
         return UITableViewCell() // dummy
