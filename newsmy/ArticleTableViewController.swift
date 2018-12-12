@@ -14,6 +14,14 @@ class ArticleTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // NewsHelper().getArticles { (articles) in
+        //    self.articles = articles
+        //    self.tableView.reloadData()
+        // }
+        getArticles()
+    }
+    
+    func getArticles() {
         NewsHelper().getArticles { (articles) in
             self.articles = articles
             self.tableView.reloadData()
@@ -46,15 +54,39 @@ class ArticleTableViewController: UITableViewController {
             if article.category == "CENSORED" {
                 cell.articleImageView.image = UIImage(named: "lighton")
             } else {
-                cell.articleImageView.kf.setImage(with: url)
+                // cell.articleImageView.kf.setImage(with: url)
+                cell.articleImageView.kf.setImage(with: url, placeholder: UIImage(named: "lighton"), options: nil, progressBlock: nil)
             }
             
             return cell
         }
         return UITableViewCell() // dummy
     }
+
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 260
+    }
+    
+    // add in section 3 lecture 21 about 3:30 min
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("this is the row = ", indexPath.row)
+        let article =  articles[indexPath.row]
+        performSegue(withIdentifier: "goToURL", sender: article)
+        
+        // performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToURL" {
+            if let article = sender as? Article {
+                if let webVC = segue.destination as? ArticleWebViewController {
+                    webVC.article = article
+                }
+            }
+        }
+    }
+    @IBAction func reloadTapped(_ sender: Any) {
+        getArticles()
     }
 }
 
