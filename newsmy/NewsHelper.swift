@@ -33,7 +33,7 @@ class NewsHelper {
                         }
                         let article = Article()
                         article.title = title
-                        article.urlToImage = urlToImage
+                        // article.urlToImage = urlToImage
                         article.url = url
                      // article.description = description
                         article.description = description
@@ -44,9 +44,13 @@ class NewsHelper {
                         if censorState {
                             if title.contains("rump") || description.contains("rump") {
                                 print("------- Crafty Trumpy ! ---------")
-                                article.category = "CENCORED !!!"
-                            } else {
+                                article.title = "CENSORED"
+                                article.description = "CENSORED"
+                                article.category = "CENSORED !!!"
                                 articles.append(article)
+                            } else {
+                                article.urlToImage = urlToImage
+                                articles.append(article) // DONT DO THIS FOR REAL APP (this is for testing)
                             }
                         } else {
                             articles.append(article)
