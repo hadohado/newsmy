@@ -10,8 +10,41 @@ import Alamofire
 import DocumentClassifier
 import Kingfisher
 
+/* ------------------------------------------------------------------------------
+
+{
+    "status": "ok",
+    "totalResults": 36,
+ 
+    "articles": [
+        {
+        "source"      : {   "id": "engadget",     "name": "Engadget"   },
+        "author"      : "Kris Holt",
+        "title"       : "Amazon brings Alexa's Follow-Up Mode to Fire TV Cube - Engadget",
+        "description" : "Multiroom audio is also available on the device as part of your Echo setup.",
+        "url"         : "https://www.engadget.com/2018/12/12/amazon-alexa-cube-multiroom-audio/",
+ "      urlToImage"  : "https://o.aolcdn.com/images/dims?thumbnail=1200%2C630&..",
+        "publishedAt" : "2018-12-12T23:32:07Z",
+        "content"     : "With Follow-Up Mode, you can ask Alexa for  … [+726 chars]"
+        },
+ 
+        {
+            "source"      : {   "id": null,   "name": "Ufc.com"    },
+            "author"      : null,
+            "title"       : "Website of the Ultimate Fighting Championship",
+            "description" : "As Real As It Gets ...",
+            "url"         : "https://www.ufc.com/news/ufc-233-pay-view-scheduled-jan-26-postponed",
+            "urlToImage"  : null,
+            "publishedAt" : "2018-12-12T19:38:17Z",
+            "content"     : null
+        }
+    ]
+ }
+ 
+------------------------------------------------------------------------------ */
+
 class NewsHelper {
-    
+   
     // https://color.adobe.com
     // send asynchronous result through closure
     func getArticles(returnArticles: @escaping ([Article]) -> Void) {
@@ -21,10 +54,18 @@ class NewsHelper {
         Alamofire.request("https://newsapi.org/v2/top-headlines?country=us&apiKey=d5a7abc05da045acb54266d081d6a983").responseJSON { ( response) in
             print(response)
             if let json = response.result.value as? [String: Any] {
+                
+                // jsonArticles is an array or list  [ ... ]   of sub-dictionaries
+                //       = [
+                //           { "title" : __ , "url" : __ },
+                //           { "title" : __ , "url" : __ }
+                //         ]
                 if let jsonArticles = json["articles"] as? [[String:Any]] {
+                    // json["articles"] will give the value associated with key = "articles"
+                    // the value is [ { "title" : __ , "url" : __ }, { "title" : __ , "url" : __ } ]
                     var articles = [Article]()
                     
-                    for jsonArticle in jsonArticles {
+                    for jsonArticle in jsonArticles { // jsonArticle is a single dictionary
                         guard let title = jsonArticle["title"] as? String,
                             let urlToImage = jsonArticle["urlToImage"] as? String,
                             let url = jsonArticle["url"] as? String,
@@ -32,7 +73,7 @@ class NewsHelper {
                         else {
                             continue
                         }
-                        let article = Article()
+                        let article = Article() // create an article object from Article class
                         article.title = title
                         // article.urlToImage = urlToImage
                         article.url = url
