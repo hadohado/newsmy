@@ -30,6 +30,7 @@
 		7B9EADC721BCA39E00911E8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B9EADC921BCA39E00911E8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BE7BC2321BF65580042A248 /* NewsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsHelper.swift; sourceTree = "<group>"; };
+		7BF4CDCB21C23A73008EA691 /* README.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = README.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +82,7 @@
 				7B9EADC421BCA39E00911E8D /* Assets.xcassets */,
 				7B9EADC621BCA39E00911E8D /* LaunchScreen.storyboard */,
 				7B9EADC921BCA39E00911E8D /* Info.plist */,
+				7BF4CDCB21C23A73008EA691 /* README.h */,
 			);
 			path = newsmy;
 			sourceTree = "<group>";

@@ -4,8 +4,12 @@
 //
 //  Created by ha tuong do on 12/10/18.
 //  Copyright © 2018 alpine. All rights reserved.
+//---------------------------------------------
+// use Kingfisher routine here    (__.kf.__)
+//---------------------------------------------
 
 import UIKit
+import Kingfisher
 
 class ArticleTableViewController: UITableViewController {
 
@@ -49,7 +53,13 @@ class ArticleTableViewController: UITableViewController {
             if article.category == .censored {
                 cell.articleImageView.image = UIImage(named: "lighton")
             } else {
+                //---------------------------------------------
+                // use Kingfisher routine here    (__.kf.__)
+                //---------------------------------------------
                 // cell.articleImageView.kf.setImage(with: url)
+                // use Kingfisher "kf" to generate the image @IBOutlet .. articleImageView
+                //                                          (in the class ArticleCell
+                // the original image comes from the "url" (= URL(string: article.urlToImage)
                 cell.articleImageView.kf.setImage(with: url, placeholder: UIImage(named: "lighton"), options: nil, progressBlock: nil)
             }
             

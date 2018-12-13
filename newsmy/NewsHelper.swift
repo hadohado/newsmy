@@ -8,7 +8,9 @@
 import Foundation
 import Alamofire
 import DocumentClassifier
-import Kingfisher
+// import Kingfisher    // in previous code, dont know why I had this "import Kingfisher" here
+                        // we need "import Kingfisher" in ArticleTableViewController.swift
+                        // since we use Kingfisher package there
 
 /* ------------------------------------------------------------------------------
 
@@ -48,7 +50,7 @@ class NewsHelper {
     // https://color.adobe.com
     // send asynchronous result through closure
     func getArticles(returnArticles: @escaping ([Article]) -> Void) {
-        var censorState = true
+        let censorState = true
         var myImage = UIImage(named: "lighton")
         
         Alamofire.request("https://newsapi.org/v2/top-headlines?country=us&apiKey=d5a7abc05da045acb54266d081d6a983").responseJSON { ( response) in
