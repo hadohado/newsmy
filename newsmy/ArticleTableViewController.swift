@@ -4,7 +4,6 @@
 //
 //  Created by ha tuong do on 12/10/18.
 //  Copyright © 2018 alpine. All rights reserved.
-//
 
 import UIKit
 
@@ -14,11 +13,8 @@ class ArticleTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // NewsHelper().getArticles { (articles) in
-        //    self.articles = articles
-        //    self.tableView.reloadData()
-        // }
         getArticles()
+        tableView.separatorStyle = .none
     }
     
     func getArticles() {
@@ -28,8 +24,7 @@ class ArticleTableViewController: UITableViewController {
         }
     }
 
-    // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -40,18 +35,18 @@ class ArticleTableViewController: UITableViewController {
         return articles.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as? ArticleCell {
         // Configure the cell...
             let article =  articles[indexPath.row]
             cell.titleLabel.text = article.title
-            cell.categoryLabel.text  = article.category
+            cell.categoryLabel.text  = article.category.rawValue
+            cell.categoryLabel.backgroundColor = article.categoryColor
             // let url = URL(string: "https://example.com/image.png")
             // imageView.kf.setImage(with: url)
             let url = URL(string: article.urlToImage)
             // cell.articleImageView.kf.setImage(with: url)
-            if article.category == "CENSORED" {
+            if article.category == .censored {
                 cell.articleImageView.image = UIImage(named: "lighton")
             } else {
                 // cell.articleImageView.kf.setImage(with: url)
@@ -72,7 +67,6 @@ class ArticleTableViewController: UITableViewController {
         print("this is the row = ", indexPath.row)
         let article =  articles[indexPath.row]
         performSegue(withIdentifier: "goToURL", sender: article)
-        
         // performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
     }
     
@@ -91,7 +85,6 @@ class ArticleTableViewController: UITableViewController {
 }
 
 class ArticleCell : UITableViewCell {
-    
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var articleImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!

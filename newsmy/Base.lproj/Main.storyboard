@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WFp-hX-Zr2">
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My  special news ❤️" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WFp-hX-Zr2">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -70,6 +70,7 @@
                                         <constraint firstItem="cns-n4-RZ9" firstAttribute="leading" secondItem="K36-Od-Qvi" secondAttribute="leadingMargin" constant="5" id="z8g-iz-l5n"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <viewLayoutGuide key="safeArea" id="Kbb-8q-gRs"/>
                                 <connections>
                                     <outlet property="articleImageView" destination="Fk3-s6-mCk" id="ZmE-hJ-sFN"/>
                                     <outlet property="categoryLabel" destination="V4U-My-Qok" id="2hp-7f-U6t"/>
