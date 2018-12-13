@@ -18,7 +18,9 @@ class ArticleTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getArticles()
-        tableView.separatorStyle = .none
+        // tableView.separatorStyle = .none // <-- this line will remove the dividing line between table cells
+                                            //        so comment it out to keep the line visible
+                                            //      to make it easier to distinguish between news articles
     }
     
     func getArticles() {
